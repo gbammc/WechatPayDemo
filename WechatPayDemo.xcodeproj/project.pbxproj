@@ -460,8 +460,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/alvin/Desktop/百度云同步盘/Code/WechatPayDemo/WechatPayDemo/app_wx_pay_tool_ios/【微信APP支付】SDK_For_IOS/WeChatSDK_1.4.1",
-					"/Users/alvin/Desktop/百度云同步盘/Code/WechatPayDemo/WechatPayDemo/WeChatSDK_1.4.1",
+					"$(SRCROOT)/WechatPayDemo/WeChatSDK_1.4.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -480,8 +479,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/alvin/Desktop/百度云同步盘/Code/WechatPayDemo/WechatPayDemo/app_wx_pay_tool_ios/【微信APP支付】SDK_For_IOS/WeChatSDK_1.4.1",
-					"/Users/alvin/Desktop/百度云同步盘/Code/WechatPayDemo/WechatPayDemo/WeChatSDK_1.4.1",
+					"$(SRCROOT)/WechatPayDemo/WeChatSDK_1.4.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

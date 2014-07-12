@@ -4,11 +4,17 @@
 
 这是非官方的微信支付Demo，基于微信SDK1.4.1构建，可以从[这里](https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&lang=zh_CN)下载到最新的官方iOS开发资料。(里面的参数都是从Android版Demo中提取)
 
+## Install
+
+```
+pod install
+```
+
 ## 说明
 
 创建这个Repo的原因是，微信官方并没有提供支付功能的iOS Demo（只有Android版...），而且个人认为官方提供的文档也相当不靠谱，例如：
 
-1. 文档里代码示例出现基本错误
+1.文档里代码示例出现基本错误
 
 ```
 // 构造参数列表
@@ -22,7 +28,7 @@ String packageSign = package.md5.uppercaseString;
 return [NSString stringWithFormat:@"%@&sign=%@",paragramString,packageSign];
 ```
 
-2. 文档指示不清
+2.文档指示不清
 
 ```
 package 生成方法:
