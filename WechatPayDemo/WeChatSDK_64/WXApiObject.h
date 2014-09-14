@@ -124,6 +124,8 @@ enum WXAPISupport {
  * @note state字符串长度不能超过1K
  */
 @property (nonatomic, retain) NSString* state;
+@property (nonatomic, retain) NSString* lang;
+@property (nonatomic, retain) NSString* country;
 
 // @property (nonatomic, retain) NSString* userName;
 // @property (nonatomic, retain) NSString* token;
@@ -160,6 +162,8 @@ enum WXAPISupport {
  * 第三方程序向微信终端发送SendMessageToWXReq后，微信发送回来的处理结果，该结果用SendMessageToWXResp表示。
  */
 @interface SendMessageToWXResp : BaseResp
+@property(nonatomic, retain) NSString* lang;
+@property(nonatomic, retain) NSString* country;
 @end
 
 /*! @brief 微信终端向第三方程序请求提供内容的消息结构体。
@@ -168,6 +172,8 @@ enum WXAPISupport {
  * 需要第三方程序调用sendResp返回一个GetMessageFromWXResp消息结构体。
  */
 @interface GetMessageFromWXReq : BaseReq
+@property (nonatomic, retain) NSString* lang;
+@property (nonatomic, retain) NSString* country;
 @end
 
 /*! @brief 微信终端向第三方程序请求提供内容，第三方程序向微信终端返回的消息结构体。
@@ -197,6 +203,8 @@ enum WXAPISupport {
  * @see WXMediaMessage
  */
 @property (nonatomic, retain) WXMediaMessage* message;
+@property (nonatomic, retain) NSString* lang;
+@property (nonatomic, retain) NSString* country;
 @end
 
 /*! @brief 微信通知第三方程序，要求第三方程序显示或处理某些消息，第三方程序处理完后向微信终端发送的处理结果。
@@ -212,6 +220,9 @@ enum WXAPISupport {
  *  微信向第三方发送的结构体，第三方不需要返回
  */
 @interface LaunchFromWXReq : BaseReq
+@property (nonatomic, retain) WXMediaMessage* message;
+@property (nonatomic, retain) NSString* lang;
+@property (nonatomic, retain) NSString* country;
 @end
 
 
@@ -241,6 +252,11 @@ enum WXAPISupport {
  * @note 长度不能超过64字节
  */
 @property (nonatomic, retain) NSString *mediaTagName;
+/**
+ *
+ */
+@property (nonatomic, retain) NSString *messageExt;
+@property (nonatomic, retain) NSString *messageAction;
 /** 多媒体数据对象，可以为WXImageObject，WXMusicObject，WXVideoObject，WXWebpageObject等。 */
 @property (nonatomic, retain) id        mediaObject;
 
