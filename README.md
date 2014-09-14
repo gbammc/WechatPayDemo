@@ -4,11 +4,17 @@
 
 这是非官方的微信支付Demo，基于微信SDK1.4.1构建，可以从[这里](https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&lang=zh_CN)下载到最新的官方iOS开发资料。(里面的参数都是从Android版Demo中提取)
 
-## Install
+## Usage
+
+这个项目依赖 [CocoaPods](http://cocoapods.org) 使用前请先在工程目录下执行：
 
 ```
 pod install
 ```
+
+另外，可以在 ```AppDelegate.m``` 中替换已有的请求参数用于个人项目的测试。
+
+而 ```package``` 里参数的含义可以参考[这里](https://github.com/gbammc/WechatPayDemo/issues/2)。:]
 
 ## 说明
 
@@ -44,12 +50,12 @@ C) 中出现的string2在后面再也没提到了，但其实就是```return [NS
 三、调起微信支付
 将第二步生成的 prepayId 作为参数,调用微信 sdk 发送支付请求到微信。
 代码示例如下:
-PayReq *request = [[[PayReq alloc] init] autorelease]; 
+PayReq *request = [[[PayReq alloc] init] autorelease];
 request.partnerId = _pactnerid;
 request.prepayId= _prapayid;
 Request.package = _package;
-request.nonceStr= _noncestr; 
-request.timeStamp= _timestamp; 
+request.nonceStr= _noncestr;
+request.timeStamp= _timestamp;
 request.sign= _sign;
 [WXApi safeSendReq:request];
 注意事项:
