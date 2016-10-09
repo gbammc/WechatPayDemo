@@ -45,7 +45,7 @@ NSString *expiresInKey = @"expires_in";
     [self getAccessToken];
 }
 
-#pragma mark - 生成各种参数
+#pragma mark - Generate params
 
 - (NSString *)genTimeStamp
 {
@@ -260,7 +260,7 @@ NSString *expiresInKey = @"expires_in";
             request.prepayId  = prePayId;
             request.package   = @"Sign=WXPay";      // 文档为 `Request.package = _package;` , 但如果填写上面生成的 `package` 将不能支付成功
             request.nonceStr  = weakSelf.nonceStr;
-            request.timeStamp = [weakSelf.timeStamp longLongValue];
+            request.timeStamp = [weakSelf.timeStamp intValue];
             
             // 构造参数列表
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -274,7 +274,7 @@ NSString *expiresInKey = @"expires_in";
             request.sign = [weakSelf genSign:params];
             
             // 在支付之前，如果应用没有注册到微信，应该先调用 [WXApi registerApp:appId] 将应用注册到微信
-            [WXApi safeSendReq:request];
+            [WXApi sendReq:request];
         } else {
             NSString *strMsg = [NSString stringWithFormat:@"errcode: %@, errmsg:%@", dict[errcodeKey], dict[errmsgKey]];
             [weakSelf showAlertWithTitle:@"错误" msg:strMsg];

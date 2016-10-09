@@ -2,7 +2,7 @@
 
 ---
 
-这是非官方的微信支付Demo，基于微信SDK1.4.1构建，可以从[这里](https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&lang=zh_CN)下载到最新的官方iOS开发资料。(里面的参数都是从Android版Demo中提取)
+这是非官方的微信支付 Demo，基于微信 SDK v2.0.2_V3 构建，可以从[这里](https://open.weixin.qq.com/cgi-bin/frame?t=resource/res_main_tmpl&lang=zh_CN)下载到最新的官方 iOS 开发资料。(里面的参数都是从 Android 版 Demo 中提取)
 
 ## Usage
 
@@ -18,7 +18,7 @@ pod install
 
 ## 说明
 
-创建这个Repo的原因是，微信官方并没有提供支付功能的iOS Demo（只有Android版...），而且个人认为官方提供的文档也相当不靠谱，例如：
+创建这个 Repo 的原因是，微信官方并没有提供支付功能的 iOS Demo（只有 Android 版...），而且个人认为官方提供的文档也相当不靠谱，例如：
 
 1.文档里代码示例出现基本错误
 
@@ -44,7 +44,7 @@ C)对 string1 中的所有键值对中的 value 进行 urlencode 转码,按照 a
 D)将 sign=signValue 拼接到 string1 后面得到最终的 package 字符串。
 ```
 
-C) 中出现的string2在后面再也没提到了，但其实就是```return [NSString stringWithFormat:@"%@&sign=%@",paragramString,packageSign];```里的```paragramString```
+C) 中出现的 string2 在后面再也没提到了，但其实就是```return [NSString stringWithFormat:@"%@&sign=%@",paragramString,packageSign];```里的```paragramString```
 
 ```
 三、调起微信支付
@@ -72,6 +72,4 @@ NSMutableDictionary params = [NSMutableDictionary dictionary]; [params setObject
 
 文档中特地用红色标明了这句```[params setObject:@"Sign=WXPay" forKey:@"package"];```，而上面 request 中的 package 却是```Request.package = _package;```，可是经实验，request 的 package 也应该同样是```@"Sign=WXPay"```才能发起支付成功。
 
----
 
-可能我的理解水平比较低，最后是看着Android的Demo才能顺利跑通，所以希望这个Repo能帮到同样是iOS的开发者，如果有什么建议的话也希望提交issue讨论，不过重点声明```本人不负任何责任```:]
